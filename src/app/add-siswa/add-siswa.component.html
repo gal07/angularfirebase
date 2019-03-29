@@ -1,0 +1,94 @@
+<p>
+  add-siswa works!
+</p>
+
+<form [formGroup]="addSiswa" id=formId (ngSubmit)="submitMethod()">
+  <label>
+    Nisn:
+    <input type="number" formControlName="nisn">
+  </label>
+  <br>
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label><br>
+
+
+  <label>
+    Tanggal lahir:
+    <input type="date" formControlName="tgl_lahir">
+  </label><br>
+
+  <label>
+    Tempat Lahir:
+    <input type="text" formControlName="tempat_lahir">
+  </label><br>
+
+  <label>
+    Asal Sekolah:
+    <input type="text" formControlName="asal_sekolah">
+  </label><br>
+
+  <label>
+    alamat Siswa:
+    <input type="text" formControlName="alamat">
+  </label><br>
+
+  <label>
+    email Siswa:
+    <input type="text" formControlName="email">
+  </label><br>
+
+  <label>
+    Sebagai :
+    <input type="text" formControlName="sebagai">
+  </label><br>
+
+  <label>
+    Nama Wali:
+    <input type="text" formControlName="nama_sebagai">
+  </label><br>
+
+
+  <label>
+    Pekerjaan Wali:
+    <input type="text" formControlName="pekerjaan_sebagai">
+  </label><br>
+
+
+  <label>
+    Penghasila Wali:
+    <input type="text" formControlName="penghasilan_sebagai">
+  </label><br>
+
+  <label>
+    alamat wali:
+    <input type="text" formControlName="alamat_sebagai">
+  </label><br>
+
+  <label>
+    Telp wali:
+    <input type="text" formControlName="telp_sebagai">
+  </label><br>
+
+  <label>
+    email wali:
+    <input type="text" formControlName="email_sebagai">
+  </label><br>
+
+
+  <button type="submit" [disabled]="!addSiswa.valid">Submit</button>
+</form>
+
+<p>
+  Form Status: {{ addSiswa.status }}
+</p>
+
+<ul>
+  <li  *ngFor="let item of items | async" >
+    Nama : {{item.name}} & Nisn : {{item.nisn}}
+  </li>
+</ul>
+
+

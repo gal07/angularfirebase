@@ -1,0 +1,48 @@
+<p>
+  fire-store works!
+</p>
+
+<h4>Add Product</h4>
+<input placeholder="Name.." type="text" #newitem />
+<input placeholder="Price.." type="number" #price />
+<input placeholder="Quantity.." type="number" #qty />
+
+<button (click)="addItem(newitem.value,price.value,qty.value)">Add</button>
+<hr>
+
+
+<h3>Top Price</h3>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+      <!-- Username : {{item.username}} & Password : {{ item.password }} -->
+    <!-- {{item | json }} -->
+
+    <input type="text" #updateItem [value]="item.item" />
+    <input type="number" #updatePrice [value]="item.price" />
+    <input type="number" #updateQty [value]="item.qty" />
+    
+    <button (click)="update(item.key,{item:updateItem.value,price:updatePrice.value,qty:updateQty.value})">Update</button>
+    <button (click)="removeItem(item.key)">Delete</button>
+  </li>
+</ul>
+
+
+<hr>
+<h3>Low Price</h3>
+<ul>
+  <li class="text" *ngFor="let item of itemsLow | async">
+      <!-- Username : {{item.username}} & Password : {{ item.password }} -->
+    <!-- {{item | json }} -->
+
+    <input type="text" #updateItem [value]="item.item" />
+    <input type="number" #updatePrice [value]="item.price" />
+    <input type="number" #updateQty [value]="item.qty" />
+    
+    <button (click)="update(item.key,{item:updateItem.value,price:updatePrice.value,qty:updateQty.value})">Update</button>
+    <button (click)="removeItem(item.key)">Delete</button>
+  </li>
+</ul>
+
+<!-- <div>
+  {{ (item | async)?.name }}
+</div> -->
